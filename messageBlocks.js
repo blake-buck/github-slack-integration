@@ -15,7 +15,24 @@ function createDefectMessage({title, creator, labels}, {repo, number}){
                     type:'mrkdwn',
                     text: `<https://github.com/${repo}/issues/${number}|${title}>`
                 }
-            }
+            },
+            {
+                "type": "section",
+                "block_id": "section678",
+                "text": {
+                  "type": "mrkdwn",
+                  "text": "Select issue status"
+                },
+                "accessory": {
+                    "action_id": "issue_statuses",
+                    "type": "external_select",
+                    "placeholder": {
+                      "type": "plain_text",
+                      "text": "Select an issue status"
+                    },
+                    "min_query_length": 0
+                },
+              }
         ]
     }
 

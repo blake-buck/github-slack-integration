@@ -60,9 +60,9 @@ async function makeGithubRequest(endpoint, {body, method}){
     return await makeRequest(`https://api.github.com/repos/${endpoint}`, {headers, body, method});
 }
 
-async function makeSlackRequest(endpoint, {body, method}){
+async function makeSlackRequest(endpoint, {body, method, contentType}){
     const headers = {
-        'Content-type':'application/json',
+        'Content-type': contentType ? contentType: 'application/json',
         Authorization: `Bearer ${botToken}`
     }
 
